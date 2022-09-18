@@ -1,25 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
-body{font-family: 'Vazirmatn', sans-serif;}
-
-/* Side Bar  */
-.sidebar{
-    width: 250px;
-    height: 100vh;
-    position: fixed;
+body {
+  font-family: "Vazir" !important;
 }
 
-/*  Main  */
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  transition: all 0.5s ease-out;
+  padding: 2rem;
+}
 
+.sidebar.inactive {
+  margin-right: -250px;
+}
+.sidebar .sidebar-item{
+    margin-top: .5rem;
+}
+.sidebar .sidebar-item .sidebar-link{
+    text-decoration: none;
+    color: #25396f;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+    transition: all .5s;
+}
+.sidebar .sidebar-item .sidebar-link:hover{
+    background-color: #f0f1f5;
+}
+.sidebar .sidebar-item.active .sidebar-link{
+    background-color: #435ebe;
+    color: #fff;
+}
+.sidebar .sidebar-item.active .sidebar-link i {
+    color: #fff;
+}
+.sidebar .sidebar-item .sidebar-link i{
+    color: #7c8db5;
+}
+/* Main */
 .main {
-    height: 100vh;
-    background-color: #f2f7ff;
+  background-color: #f2f7ff;
+  height: 100vh;
+  transition: all 0.5s ease-out;
 }
-header i{
-    cursor: pointer;
-    font-size: 2rem;
+
+.main.active {
+  margin-right: 0;
 }
-@media (min-width: 992px){
-    .main{
-        margin-right: 250px;
-    }
+
+@media (min-width: 992px) {
+  .main {
+    margin-right: 250px;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
 }
