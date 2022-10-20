@@ -1,44 +1,87 @@
 body {
   font-family: "Vazir" !important;
 }
-
+/* width  */
+::-webkit-scrollbar{
+  width: 6px;
+}
+/* Track  */
+::-webkit-scrollbar-track{
+  background-color: #f1f1f1;
+}
+/* handle  */
+::-webkit-scrollbar-thumb{
+  background-color: #aaa;
+  border-radius: 6ox;
+}
+/* handle on hover  */
+::-webkit-scrollbar-thumb:hover{
+  background-color: #555;
+}
 /* Sidebar */
 .sidebar {
-  width: 250px;
+  width: 260px;
   height: 100vh;
   position: fixed;
   background-color: white;
   transition: all 0.5s ease-out;
   padding: 2rem;
 }
-
+.sidebar:hover{
+  overflow-y: auto;
+}
 .sidebar.inactive {
-  margin-right: -250px;
+  margin-right: -260px;
 }
-.sidebar .sidebar-item{
-    margin-top: .5rem;
+.sidebar .sidebar-item {
+  margin-top: 0.5rem;
 }
-.sidebar .sidebar-item .sidebar-link{
-    text-decoration: none;
-    color: #25396f;
-    padding: 0.7rem 1rem;
-    display: flex;
-    align-items: center;
-    border-radius: .5rem;
-    transition: all .5s;
+.sidebar .sidebar-item .sidebar-link {
+  text-decoration: none;
+  color: #25396f;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  transition: all 0.5s;
 }
-.sidebar .sidebar-item .sidebar-link:hover{
-    background-color: #f0f1f5;
+.sidebar .sidebar-item .sidebar-link:hover {
+  background-color: #f0f1f5;
 }
-.sidebar .sidebar-item.active .sidebar-link{
-    background-color: #435ebe;
-    color: #fff;
+.sidebar .sidebar-item.active .sidebar-link {
+  background-color: #435ebe;
+  color: #fff;
+}
+.sidebar .sidebar-item li {
+  cursor: pointer;
 }
 .sidebar .sidebar-item.active .sidebar-link i {
-    color: #fff;
+  color: #fff;
 }
-.sidebar .sidebar-item .sidebar-link i{
-    color: #7c8db5;
+.sidebar .sidebar-item .sidebar-link i {
+  color: #7c8db5;
+}
+.sidebar .sidebar-item .sidebar-link {
+  cursor: pointer;
+}
+.sidebar .sidebar-item .sidebar-link .bi-chevron-down {
+  font-size: 0.8rem;
+}
+/* submenu  */
+.sidebar .submenu {
+  list-style: none;
+}
+.sidebar .submenu .submenu-item a {
+  text-decoration: none;
+  display: block;
+  padding: 0.7rem 0.8rem;
+  color: #25396f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.sidebar .submenu .submenu-item a:hover {
+  margin-right: 0.3rem;
 }
 /* Main */
 .main {
@@ -53,10 +96,12 @@ body {
 
 @media (min-width: 992px) {
   .main {
-    margin-right: 250px;
+    margin-right: 260px;
   }
 }
-
+.bi {
+  cursor: pointer;
+}
 [x-cloak] {
   display: none !important;
 }

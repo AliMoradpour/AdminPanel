@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <title>AdminPanel | AlimMoradpour</title>
+    <title>AdminPanel | AliMoradpour</title>
   </head>
 
   <body>
@@ -28,24 +28,98 @@
         <div
           class="d-flex justify-content-between justify-content-lg-center align-items-center"
         >
-          <h4 class="fw-bold">AliMoradpour.com</h4>
+          <h4 class="fw-bold">AliMoradpour</h4>
           <i @click="toggle" class="d-lg-none fs-1 bi bi-x"></i>
         </div>
         <div class="mt-4">
           <ul class="list-unstyled">
-              <li class="sidebar-item">
-                <a href="./index.html" class="sidebar-link">
-                  <i class="me-2 bi bi-grid-fill"></i>
-                  <span>داشبورد</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a href="./index.html" class="sidebar-link">
-                  <i class="me-2 bi bi-shop"></i>
-                  <span>فروشگاه</span>
-                </a>
-              </li>
-        </ul>
+            <li class="sidebar-item active">
+              <a href="./index.html" class="sidebar-link">
+                <i class="me-2 bi bi-grid-fill"></i>
+                <span>داشبورد</span>
+              </a>
+            </li>
+            <!-- dropDown  -->
+            <li x-data="dropdown" class="sidebar-item">
+              <div @click="toggle" class="sidebar-link">
+                <i class="me-2 bi bi-shop"></i>
+                <span>فروشگاه</span>
+                <i class="ms-auto bi bi-chevron-down"></i>
+              </div>
+              <ul x-show="open" x-transition class="submenu">
+                <li class="submenu-item"><a href="#">لیست فروشگاه ها</a></li>
+                <li class="submenu-item"><a href="#">ایجاد فروشگاه</a></li>
+                <li class="submenu-item"><a href="#">ویرایش فروشگاه</a></li>
+              </ul>
+            </li>
+
+            <li x-data="dropdown" class="sidebar-item">
+              <div @click="toggle" class="sidebar-link">
+                <i class="me-2 bi bi-box-seam"></i>
+                <span>محصولات</span>
+                <i class="ms-auto bi bi-chevron-down"></i>
+              </div>
+              <ul x-show="open" x-transition class="submenu">
+                <li class="submenu-item"><a href="#">لیست محصولات</a></li>
+                <li class="submenu-item"><a href="#">ایجاد محصول</a></li>
+                <li class="submenu-item"><a href="#">ویرایش محصولات</a></li>
+              </ul>
+            </li>
+
+            <li x-data="dropdown" class="sidebar-item">
+              <div @click="toggle" class="sidebar-link">
+                <i class="me-2 bi bi-basket-fill"></i>
+                <span>سفارشات</span>
+                <i class="ms-auto bi bi-chevron-down"></i>
+              </div>
+              <ul x-show="open" x-transition class="submenu">
+                <li class="submenu-item"><a href="#">لیست سفارشات</a></li>
+                <li class="submenu-item"><a href="#">سفارشات تایید شده</a></li>
+                <li class="submenu-item"><a href="#">سفارشات تاییده نشده</a></li>
+              </ul>
+            </li>
+
+            <li class="sidebar-item">
+              <a href="./index.html" class="sidebar-link">
+                <i class="me-2 bi bi-percent"></i>
+                <span>تخفیف ها</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a href="./index.html" class="sidebar-link">
+                <i class="me-2 bi bi-chat-right-dots-fill"></i>
+                <span>تیکت</span>
+              </a>
+            </li>
+
+            <li x-data="dropdown" class="sidebar-item">
+              <div @click="toggle" class="sidebar-link">
+                <i class="me-2 bi bi-people-fill"></i>
+                <span>کاربران</span>
+                <i class="ms-auto bi bi-chevron-down"></i>
+              </div>
+              <ul x-show="open" x-transition class="submenu">
+                <li class="submenu-item"><a href="#">لیست کاربران</a></li>
+                <li class="submenu-item"><a href="#">ایجاد کاربر</a></li>
+                <li class="submenu-item"><a href="#">ویرایش کابر</a></li>
+              </ul>
+            </li>
+
+            <li x-data="dropdown" class="sidebar-item">
+              <div @click="toggle" class="sidebar-link">
+                <i class="me-2 bi bi-chat-dots-fill"></i>
+                <span>کامنت ها</span>
+                <i class="ms-auto bi bi-chevron-down"></i>
+              </div>
+              <ul x-show="open" x-transition class="submenu">
+                <li class="submenu-item"><a href="#">لیست کامنت ها</a></li>
+                <li class="submenu-item"><a href="#">کامنت های تایید شده</a></li>
+                <li class="submenu-item"><a href="#">کامنت های تاییده نشده</a></li>
+              </ul>
+            </li>
+
+          </ul>
         </div>
       </section>
       <section class="main" :class="open || 'active'">
@@ -70,6 +144,13 @@
       document.addEventListener("alpine:init", () => {
         Alpine.data("toggleSidebar", () => ({
           open: window.innerWidth <= 992 ? false : true,
+
+          toggle() {
+            this.open = !this.open;
+          },
+        })),
+        Alpine.data("dropdown", () => ({
+          open: false,
 
           toggle() {
             this.open = !this.open;
