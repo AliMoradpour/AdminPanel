@@ -23,6 +23,13 @@ body {
 .lh-0 {
   line-height: 0;
 }
+.dir-ltr{
+  direction: ltr;
+}
+.btn-light-primary{
+  background-color: #ebf3ff;
+  color: #002152;
+}
 /* ===== Scroll Bar ===== */
 /* width  */
 ::-webkit-scrollbar {
