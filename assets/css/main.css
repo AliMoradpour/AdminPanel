@@ -135,9 +135,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-#chartdiv {
-  direction: ltr;
-}
+
 @media (min-width: 992px) {
   .main {
     margin-right: 260px;
