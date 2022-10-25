@@ -20,10 +20,7 @@ body {
 .bg-green {
   background-color: #5ddad4;
 }
-.bg-red {
-  background-color: #5ddad4;
-}
-.lh-0{
+.lh-0 {
   line-height: 0;
 }
 /* ===== Scroll Bar ===== */
@@ -124,13 +121,16 @@ body {
 .main .toggle-sidebar-icon {
   color: #364b98;
 }
-.main .content .stats-icon{
+.main .content .stats-icon {
   width: 3rem;
   height: 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#chartdiv{
+  direction: ltr;
 }
 @media (min-width: 992px) {
   .main {
