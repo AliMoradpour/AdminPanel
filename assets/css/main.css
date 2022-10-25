@@ -11,7 +11,22 @@ body {
 .fs-7 {
   font-size: 0.9rem;
 }
-
+.bg-purple {
+  background-color: #9694ff;
+}
+.bg-blue {
+  background-color: #57caeb;
+}
+.bg-green {
+  background-color: #5ddad4;
+}
+.bg-red {
+  background-color: #5ddad4;
+}
+.lh-0{
+  line-height: 0;
+}
+/* ===== Scroll Bar ===== */
 /* width  */
 ::-webkit-scrollbar {
   width: 6px;
@@ -108,6 +123,14 @@ body {
 
 .main .toggle-sidebar-icon {
   color: #364b98;
+}
+.main .content .stats-icon{
+  width: 3rem;
+  height: 3rem;
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (min-width: 992px) {
   .main {

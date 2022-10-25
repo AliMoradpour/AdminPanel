@@ -18,6 +18,12 @@
     />
     <!-- main css  -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- Alpine js  -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
     <title>AdminPanel | AliMoradpour</title>
   </head>
 
@@ -214,7 +220,11 @@
                   </div>
                 </div>
               </div>
-              <ul class="dropdown-menu" type="button" aria-labelledby="dropdownMenuButton1">
+              <ul
+                class="dropdown-menu"
+                type="button"
+                aria-labelledby="dropdownMenuButton1"
+              >
                 <li class="dropdown-item d-flex align-items-center p-0 my-2">
                   <i class="ps-4 bi bi-people" href="#"></i>
                   <p class="fs-7 ps-3 m-0" href="#">پروفایل</p>
@@ -232,13 +242,133 @@
                   <i class="ps-4 bi bi-box-arrow-right" href="#"></i>
                   <p class="fs-7 ps-3 m-0" href="#">خروج</p>
                 </li>
-
               </ul>
             </div>
           </div>
         </header>
         <!-- content section  -->
-        <div class="content">Content</div>
+        <div class="content p-2 p-lg-4">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-9">
+                <!-- stats  -->
+                <div class="row g-3">
+                  <!-- c 1  -->
+                  <div class="col-6 col-xl-3">
+                    <div class="card border-0 rounded">
+                      <div class="card-body">
+                        <div class="row g-3">
+                          <div class="col-md-4">
+                            <!-- icon  -->
+                            <div class="stats-icon bg-purple">
+                              <i
+                                class="bi bi-eye-fill lh-0 fs-3 text-white"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <!-- texes  -->
+                            <h6 class="fs-7 text-muted">نمایش پروفایل</h6>
+                            <h6
+                              class="fw-bold mb-0 purecounter"
+                              data-purecounter-start="0"
+                              data-purecounter-end="18600"
+                            >
+                              18600
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- c 2  -->
+                  <div class="col-6 col-xl-3">
+                    <div class="card border-0 rounded">
+                      <div class="card-body">
+                        <div class="row g-3">
+                          <div class="col-md-4">
+                            <!-- icon  -->
+                            <div class="stats-icon bg-blue">
+                              <i
+                                class="bi bi-person-fill lh-0 fs-3 text-white"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <!-- texes  -->
+                            <h6 class="fs-7 text-muted">کاربران سایت</h6>
+                            <h6
+                              class="fw-bold mb-0 purecounter"
+                              data-purecounter-start="0"
+                              data-purecounter-end="125000"
+                            ></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- c 3  -->
+                  <div class="col-6 col-xl-3">
+                    <div class="card border-0 rounded">
+                      <div class="card-body">
+                        <div class="row g-3">
+                          <div class="col-md-4">
+                            <!-- icon  -->
+                            <div class="stats-icon bg-green">
+                              <i
+                                class="bi bi-person-plus-fill lh-0 fs-3 text-white"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <!-- texes  -->
+                            <h6 class="fs-7 text-muted">لورم ایپسوم</h6>
+                            <h6
+                              class="fw-bold mb-0 purecounter"
+                              data-purecounter-start="0"
+                              data-purecounter-end="2500"
+                            >
+                              18600
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- c 4  -->
+                  <div class="col-6 col-xl-3">
+                    <div class="card border-0 rounded">
+                      <div class="card-body">
+                        <div class="row g-3">
+                          <div class="col-md-4">
+                            <!-- icon  -->
+                            <div class="stats-icon bg-danger">
+                              <i
+                                class="bi bi-bookmark-dash-fill lh-0 fs-3 text-white"
+                              ></i>
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <!-- texes  -->
+                            <h6 class="fs-7 text-muted">ذخیره شده</h6>
+                            <h6
+                              class="fw-bold mb-0 purecounter"
+                              data-purecounter-start="0"
+                              data-purecounter-end="469"
+                            >
+                              18600
+                            </h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3"></div>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -248,11 +378,8 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
-    <!-- main js  -->
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.3.4/dist/cdn.min.js"
-    ></script>
+    <!-- PureCounterJs  -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
     <!-- Alpine js  -->
     <script>
       document.addEventListener("alpine:init", () => {
@@ -271,6 +398,9 @@
             },
           }));
       });
+
+      // PureCounterJs
+      new PureCounter();
     </script>
   </body>
 </html>
